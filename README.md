@@ -13,3 +13,9 @@ yarn dev
 npm i
 npm run dev
 ```
+# Screenshot
+
+![](public/imgs/BrowserOld.png)
+![](public/imgs/BrowserNew.png)
+![](public/imgs/BrowserSearch.png)
+![](public/imgs/Idea.png)
