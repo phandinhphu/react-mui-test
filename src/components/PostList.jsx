@@ -10,8 +10,8 @@ import {
   TextField,
   DialogActions,
 } from "@mui/material";
-import React, { useState } from "react";
 import Post from "./Post";
+import PostForm from "./PostForm";
 
 const postItem = [
   {
@@ -44,14 +44,6 @@ const postItem = [
 ];
 
 export const PostList = () => {
-  const [open, setOpen] = useState(false);
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
 
   return (
     <Box
@@ -67,86 +59,13 @@ export const PostList = () => {
       <Box
         sx={{
           width: "100%",
-          bgcolor: "#16181C",
+          bgcolor: "#fff",
           borderRadius: "50px",
           padding: "16px",
         }}
       >
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-        >
-          <Box sx={{ display: "flex", alignItems: "center", gap: "16px" }}>
-            <Avatar
-              src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="User Avatar"
-            />
-            <Typography
-              variant="body1"
-              color="#808080"
-              fontWeight={"600"}
-              onClick={handleClickOpen}
-            >
-              Bắt đầu nimbus...
-            </Typography>
-          </Box>
-          <Button
-            variant="contained"
-            sx={{
-              backgroundColor: "#6EC207",
-              color: "#f5f5f5",
-              borderRadius: "25px",
-            }}
-          >
-            Đăng
-          </Button>
-        </Box>
+        <PostForm />
       </Box>
-
-      <Dialog open={open} onClose={handleClose}>
-        <Box
-          sx={{ backgroundColor: "#16181c", width: "400px" }}
-          component="form"
-        >
-          <DialogTitle color="#f5f5f5">Create new</DialogTitle>
-          <DialogContent>
-            <TextField
-              label="What's new?"
-              name="content"
-              fullWidth
-              multiline
-              rows={3}
-              sx={{
-                marginTop: "16px",
-                "& .MuiInputBase-root": {
-                  color: "#f5f5f5", // Text color
-                },
-                "& .MuiInputLabel-root": {
-                  color: "#808080", // Label color
-                },
-                "& .MuiOutlinedInput-root": {
-                  "& fieldset": {
-                    borderColor: "#808080", // Border color
-                  },
-                  "&:hover fieldset": {
-                    borderColor: "#f5f5f5", // Hover border color
-                  },
-                  "&.Mui-focused fieldset": {
-                    borderColor: "#f5f5f5", // Focused border color
-                  },
-                },
-              }}
-            />
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={handleClose}>Cancel</Button>
-            <Button type="submit">Post</Button>
-          </DialogActions>
-        </Box>
-      </Dialog>
 
       {postItem.map((item, index) => {
         return (

@@ -27,7 +27,6 @@ export default function Post({ caption, img, like, comment, view, share }) {
     }
     setIsLiked(!isLiked);
   };
-
   return (
     <Card sx={{ maxWidth: "100%", bgcolor: "#16181C", borderRadius: "25px" }}>
       <CardHeader

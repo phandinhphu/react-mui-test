@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
   AppBar,
   Toolbar,
@@ -11,11 +12,11 @@ import {
   Badge
 } from '@mui/material';
 import {
-  Bolt as BoltIcon,
   Home as HomeIcon,
   Person as PersonIcon,
   Email as EmailIcon,
-  Notifications as NotificationsIcon
+  Notifications as NotificationsIcon,
+  Search as SearchIcon
 } from '@mui/icons-material';
 
 const Navbar = () => {
@@ -56,6 +57,8 @@ const Navbar = () => {
         >
           <Tab
             icon={<HomeIcon />}
+            component={Link}
+            to="/"
             sx={{
               color: activeTab === 0 ? '#fff' : '#aaa',
               '&.Mui-selected': { color: '#6ec207' },
@@ -63,7 +66,9 @@ const Navbar = () => {
             }}
           />
           <Tab
-            icon={<PersonIcon />}
+            icon={<SearchIcon />}
+            component={Link}
+            to="/search"
             sx={{
               color: activeTab === 1 ? '#fff' : '#aaa',
               '&.Mui-selected': { color: '#6ec207' },
@@ -71,7 +76,7 @@ const Navbar = () => {
             }}
           />
           <Tab
-            icon={<EmailIcon />}
+            icon={<PersonIcon />}
             sx={{
               color: activeTab === 2 ? '#fff' : '#aaa',
               '&.Mui-selected': { color: '#6ec207' },
@@ -79,9 +84,17 @@ const Navbar = () => {
             }}
           />
           <Tab
+            icon={<EmailIcon />}
+            sx={{
+              color: activeTab === 3 ? '#fff' : '#aaa',
+              '&.Mui-selected': { color: '#6ec207' },
+              minWidth: 100
+            }}
+          />
+          <Tab
             icon={<NotificationsIcon />}
             sx={{
-              color: activeTab === 2 ? '#fff' : '#aaa',
+              color: activeTab === 4 ? '#fff' : '#aaa',
               '&.Mui-selected': { color: '#6ec207' },
               minWidth: 100
             }}

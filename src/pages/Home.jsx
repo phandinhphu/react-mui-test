@@ -8,7 +8,7 @@ export const Home = () => {
   return (
     <>
       <Container maxWidth="xl" sx={{ marginTop: "80px", marginBottom: "40px" }}>
-        <Grid2 container>
+        <Grid2 container spacing={2}>
           <Grid2 size={{ md: 3 }}>
             <Sidebar />
           </Grid2>

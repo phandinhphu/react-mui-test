@@ -47,36 +47,9 @@ function Sidebar() {
       <Box
         sx={{
           position: "fixed",
-          width: "360px"
+          width: "auto"
         }}
       >
-        {/* Thanh tìm kiếm */}
-        <TextField
-          placeholder="Tìm kiếm"
-          variant="outlined"
-          fullWidth
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <SearchIcon sx={{color: "#808080"}}/>
-              </InputAdornment>
-            ),
-            style: {
-              color: "#f5f5f5",
-              backgroundColor: "#16181c",
-              borderRadius: "25px",
-            },
-          }}
-          sx={{
-            "& .MuiOutlinedInput-root": {
-              "& fieldset": { border: "none" },
-            },
-          }}
-        />
-
-        {/* Tạo khoảng cách 30px */}
-        <Box sx={{ height: "20px" }} />
-
         <Box
           sx={{
             backgroundColor: "#16181c",
